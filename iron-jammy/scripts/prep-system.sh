@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-[[ ! -e /etc/apt/apt.conf.d/proxy ]] && echo 'Acquire::http { Proxy "http://192.168.33.10:3142"; }' | sudo tee -a /etc/apt/apt.conf.d/proxy
-
 sudo apt-get update && sudo apt-get install locales -y
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
