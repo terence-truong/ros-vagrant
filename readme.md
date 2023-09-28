@@ -10,6 +10,25 @@ Sets up basic Ubuntu/RockyLinux box with ROS installed.
 1. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. [Vagrant](https://www.vagrantup.com/downloads.html)
 
+## Instructions
+
+### Getting started
+
+1. Change directory to the desired combination of ROS version to Linux distro: `cd iron-jammy`
+1. Start up machine: `vagrant up`
+1. Connect to machine: `vagrant ssh`
+1. While inside virtual machine, change directory to workspace source: `cd ros2_ws/src`
+1. Create package using cmake: `ros2 pkg create --build-type ament_cmake --node-name my_node my_package --license Apache-2.0`
+1. From your favorite editor, make changes inside of 'iron-jammy/ros2_ws/src/my_package'.
+1. Power down the machine, after logging out: `vagrant halt`
+1. Remove the machine: `vagrant destroy -fg`
+
+### Using XQuartz
+
+1. Download [XQuartz](https://www.xquartz.org/)
+1. Open a terminal.
+1. Connect to machine: `ssh -X vagrant@172.16.8.10`
+
 ## Version Matrices
 
 ### Rocky Linux vs ROS 2
@@ -53,7 +72,7 @@ In the Vagrant boxes of this repository the recommended versions for Gazebo are 
 | **Humble (ROS2)**  | | | **Recommended** |
 | **Noetic (ROS1)**  | | | | **Recommended** |
 
-## Acknowledgement
+## Acknowledgements
 
 This project was inspired by [@karadalex](https://github.com/karadalex/ros-vagrant-environments) and [@lewkoo](https://github.com/lewkoo/ros-vagrant-environments).
 
