@@ -20,6 +20,9 @@ Sets up basic Ubuntu/RockyLinux box with ROS installed.
 1. While inside virtual machine, change directory to workspace source: `cd ros2_ws/src`
 1. Create package using cmake: `ros2 pkg create --build-type ament_cmake --node-name my_node my_package --license Apache-2.0`
 1. From your favorite editor, make changes inside of 'iron-jammy/ros2_ws/src/my_package'.
+1. Build your package with 'colcon build'.
+1. Source your setup file '. install/setup.bash'.
+1. Run your package with 'ros2 run my_package my_node'.
 1. Power down the machine, after logging out: `vagrant halt`
 1. Remove the machine: `vagrant destroy -fg`
 
@@ -27,7 +30,7 @@ Sets up basic Ubuntu/RockyLinux box with ROS installed.
 
 1. Download [XQuartz](https://www.xquartz.org/)
 1. Open a terminal.
-1. Connect to machine: `ssh -X vagrant@172.16.8.10`
+1. Connect to machine: `ssh localhost -X -p 2222 -l vagrant`
 
 ## Version Matrices
 
