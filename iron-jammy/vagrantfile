@@ -4,10 +4,10 @@
 Vagrant.configure("2") do |config|
   # Enable ssh X11 forwarding
   config.ssh.forward_x11  = true
-
+  
   config.vm.box = "ubuntu/jammy64"
-  config.vm.network "private_network", ip: "172.16.8.10"
-
+  config.vm.network "forwarded_port", guest: 22, host: 2222, auto_correct: true
+  
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "./ros2_ws", "/home/vagrant/ros2_ws"
 
